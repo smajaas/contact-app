@@ -8,12 +8,18 @@ class AddContact extends React.Component {
 
 add= (e)=>{
     e.preventDefault();
-    if(this.state.name ==="" && this.state.email==="") {
+    if(this.state.name ==="" || this.state.email==="") {
         alert("All the fields are Mandatory!");
-        return
+        return;
     }
 
-    console.log(this.state);
+    //Add user in app.js using props as addContactHandler
+    this.props.addContactHandler(this.state);
+
+    //Clear fields once we add users and add it in App.js
+
+    this.setState({ name:"",email:""});
+
 }
 
 
