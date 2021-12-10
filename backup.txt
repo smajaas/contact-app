@@ -1,0 +1,13 @@
+ const contacts = [
+     {
+       id:"1001",
+       "name":"Ajaas",
+       "email":"smajaas@yahoo.com",
+     },
+
+     {
+       id:"1002",
+       "name":"Afaan",
+       "email":"afaans@gmail.com",
+     }
+   ];
