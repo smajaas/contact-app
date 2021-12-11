@@ -5,6 +5,8 @@ import { v4 as uuid_v4 } from "uuid";
 import Header from "./Header.js";
 import AddContact from "./AddContact.js";
 import ContactList from "./ContactList.js";
+import ContactDetail from "./ContactDetail.js";
+import EditContact from "./EditContact.js";
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
@@ -15,6 +17,10 @@ function App() {
     console.log(contact);
     setContacts([...contacts, { id: uuid_v4(), ...contact }]);  //uuid for automatic id
   };
+
+  const updateContactHandler = () => {
+
+  }
 
 //Delete function to delete user
 
@@ -58,6 +64,19 @@ const removeContactHandler= (id) => {
       addContactHandler={addContactHandler}
         />)}
     />
+
+   <Route 
+    path="/edit" 
+    exact 
+    render={(props)=>(<EditContact {...props} 
+      updateContactHandler={updateContactHandler}
+     
+      />)}
+    /> 
+
+<Route 
+    path="/contact/:id" component={ContactDetail} 
+    /> 
      </Switch>
      </Router>
      </div>
