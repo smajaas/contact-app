@@ -20,9 +20,11 @@ add= (e)=>{
 
     this.setState({ name:"",email:""});
 
-}
+    //Once we successfully add the user it will automatically navigate to home 
+    this.props.history.push("/");
+    console.log(this.props);
 
-
+};
 render() {
     return (
         <div className="ui main">
